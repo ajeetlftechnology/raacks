@@ -7,6 +7,8 @@
 //
 
 #import "SocialConnectController.h"
+#import "LoginController.h"
+#import "SignUpController.h"
 
 @interface SocialConnectController ()
 
@@ -27,12 +29,51 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [signUpBtn.layer setCornerRadius:2.0];
+    [loginBtn.layer setCornerRadius:2.0];
+    [loginBtn.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [loginBtn.layer setBorderWidth:1.0];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setTitle:@""];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self setTitle:@""];
+}
+
+- (IBAction) signUpBtnTapped:(id) sender
+{
+    SignUpController *controller = [[SignUpController alloc] initWithNibName:@"SignUpController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction) loginBtnTapped:(id) sender
+{
+    LoginController *controller = [[LoginController alloc] initWithNibName:@"LoginController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction) facebookBtnTapped:(id) sender
+{
+
+}
+
+- (IBAction) twitterBtnTapped:(id) sender
+{
+
 }
 
 @end

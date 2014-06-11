@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface SocialConnectController : UIViewController
+{
+    IBOutlet UIButton *signUpBtn, *loginBtn;
+}
 
+- (IBAction) signUpBtnTapped:(id) sender;
+- (IBAction) loginBtnTapped:(id) sender;
+- (IBAction) facebookBtnTapped:(id) sender;
+- (IBAction) twitterBtnTapped:(id) sender;
 @end
